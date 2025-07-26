@@ -6,10 +6,17 @@ html, body {
   overflow: hidden;
 }
 
-body{
+/*body{
   cursor: url('https://img.icons8.com/?size=60&id=F99UOVZKSc4Q&format=png&color=000000'), auto;
-}
+}*/
 
+.buttons-div{
+  position: absolute;
+  background-color: rgba(36, 143, 143, 0.986);
+  width: 5vw;
+  height: 5vh;
+  z-index: 15;
+}
 .background-div{
   position: absolute;
   z-index: 1;
@@ -35,7 +42,6 @@ h1{
 
 .app-div{
   position: relative;
-  background-color: rgba(0, 255, 255, 0);
   width: 100vw;
   height: 100vh;
   z-index: 10;
@@ -47,4 +53,9 @@ h1{
   padding: 20px;
   z-index: 20;
   background-color: rebeccapurple;
+}
+
+.drag-div{
+  width: 100px;
+  background-color: blue;
 }

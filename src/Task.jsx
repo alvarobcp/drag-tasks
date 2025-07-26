@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 
-function Task() {
+function Task({deleteTask}) {
 
     const[task, SetTask] = useState("");
 
@@ -16,17 +16,16 @@ function Task() {
 
   return (
     <div className="task">
-        <strong><div>Drag here</div></strong>
-        <p>Hola que tal este es mi task bonito chuli</p>
+        <strong><div className="drag-div">/ / / /</div></strong>
         <form>
-        <input
+        <textarea
             onChange={handleChange}
             type="text"
             placeholder="New task..."
             value={task}
         />
-        <button type="submit">Guardar</button>
         </form>
+        <button onClick={deleteTask}>Delete</button>
     </div>
   )
 }
