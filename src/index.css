@@ -56,6 +56,34 @@ h1{
 }
 
 .drag-div{
-  width: 100px;
+  width: 200px;
+  height: 25px;
   background-color: blue;
+  cursor: move;
+}
+
+.resizable-box{
+  position: absolute; 
+  background-color: aqua;
+}
+
+.drg-back{
+  position: relative;
+  z-index: 10;
+}
+
+.drg-task{
+  position: relative;
+  z-index: 30;
+}
+
+.drg-emoji{
+  position: relative;
+  z-index: 50;
+  font-size: 70px;
+  margin: 0px;
+}
+
+.react-draggable{
+  width: fit-content;
 }
