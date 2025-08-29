@@ -97,7 +97,7 @@ function App() {
 
         {emojis.map(emoji => (
           <Draggable  key={emoji.id} defaultPosition={{x: emoji.positionX, y: emoji.positionY} }>
-           <div className="drg-emoji"><p>{emoji.emoji}</p></div>
+           <div className="drg-emoji"><p style={{margin: '0px'}}>{emoji.emoji}</p></div>
           </Draggable>
         ))}
         

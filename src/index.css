@@ -68,20 +68,21 @@ h1{
 }
 
 .drg-back{
-  position: relative;
+  position: absolute;
   z-index: 10;
 }
 
 .drg-task{
-  position: relative;
+  position: absolute;
   z-index: 30;
 }
 
 .drg-emoji{
-  position: relative;
+  position: absolute;
   z-index: 50;
   font-size: 70px;
-  margin: 0px;
+  line-height: 1;
+  cursor: move;
 }
 
 .react-draggable{
