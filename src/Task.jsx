@@ -30,32 +30,32 @@ function Task({deleteTask, type}) {
     switch (type) {
         case 'title':
             return(<div className="task ttitle">
-                <strong><div className="drag-div">/ / / /</div></strong>
+                <strong><div className="drag-div"></div></strong>
                 <form>
                 <textarea
                     onChange={handleChange}
                     type="text"
-                    placeholder="New task..."
+                    placeholder="New title"
                     value={task}
                 />
                 </form>
             </div>)
         case 'task':
             return(<div className="task ttask">
-                <strong><div className="drag-div">/ / / /</div></strong>
+                <strong><div className="drag-div"></div></strong>
                 <form>
                 <textarea
                     onChange={handleChange}
                     type="text"
-                    placeholder="New task..."
+                    placeholder="New task to do"
                     value={task}
                 />
                 </form>
-                <button onClick={deleteTask}>Delete</button>
+                <button onClick={deleteTask}>Completed</button>
             </div>)
         case 'date':
             return(<div className="task tdate">
-                <strong><div className="drag-div">/ / / /</div></strong>
+                <strong><div className="drag-div"></div></strong>
                 <form>
                 <label>
                     <input
@@ -67,15 +67,15 @@ function Task({deleteTask, type}) {
                 <textarea
                     onChange={handleChange}
                     type="text"
-                    placeholder="New task..."
+                    placeholder="New date to attend"
                     value={task}
                 />
                 </form>
-                <button onClick={deleteTask}>Delete</button>
+                <button onClick={deleteTask}>Completed</button>
             </div>)
         case 'event':
             return(<div className="task tevent">
-                <strong><div className="drag-div">/ / / /</div></strong>
+                <strong><div className="drag-div"></div></strong>
                 <form>
                 <label>
                     <input
@@ -87,17 +87,17 @@ function Task({deleteTask, type}) {
                 <textarea
                     onChange={handleChange}
                     type="text"
-                    placeholder="New task..."
+                    placeholder="New event to attend"
                     value={task}
                 />
                 <textarea
                     onChange={handleLocationChange}
                     type="text"
-                    placeholder="New location..."
+                    placeholder="Add location"
                     value={locationTask}
                 />
                 </form>
-                <button onClick={deleteTask}>Delete</button>
+                <button onClick={deleteTask}>Completed</button>
             </div>)
     
         default:

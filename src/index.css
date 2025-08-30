@@ -4,6 +4,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+ 
 }
 
 /*body{
@@ -29,6 +30,7 @@ html, body {
   background: #ffffff;
   background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.35) 1px, transparent 0);
   background-size: 20px 20px;
+  
 }
 
 h1{
@@ -39,6 +41,51 @@ h1{
   z-index: 0;
   color: rgb(187, 255, 196);
 }
+
+textarea{
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: "Google Sans Code", monospace;
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  resize: vertical;
+}
+
+textarea::placeholder {
+  font-family: "Google Sans Code", monospace;
+  font-size: 20px;
+  color: rgb(189, 189, 189);
+  font-weight: 300;
+
+}
+
+textarea:focus{
+  outline: none;
+}
+
+textarea:hover {
+  background-color: aliceblue;
+}
+
+.tdate label, .tevent label{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  
+}
+
+.tdate input, .tevent input{
+  font-size: 16px;
+  border: none;
+  font-family: 'Google Sans Code', monospace;
+}
+
+
 
 .app-div{
   position: relative;
@@ -53,23 +100,74 @@ h1{
   padding: 20px;
   z-index: 20;
   background-color: rebeccapurple;
+  
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  
+  border-radius: 20px;
+  width: 250px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
 }
 
+.task strong{
+  width: 100%;
+}
+
+.task form{
+  width: 100%;
+}
+
+
 .drag-div{
-  width: 200px;
-  height: 25px;
-  background-color: blue;
+ 
+  height: 20px;
+  border-radius: 5px;
+  background-color: rgb(255, 210, 9);
+  padding: 5px;
+  margin-bottom: 5px;
   cursor: move;
 }
 
 .resizable-box{
   position: absolute; 
-  background-color: aqua;
+  background-color: rgba(255, 217, 4, 0.267);
+  border-radius: 35px;
+
 }
+
+.tback textarea{
+  
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 40px;
+  margin: 10px 20px;
+  font-weight: 400;
+  resize: none;
+  
+}
+
+.tback textarea::placeholder{
+  
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 40px;
+  margin: 10px 20px;
+  font-weight: 400;
+  resize: none;
+  color: rgb(138, 138, 138);
+}
+
 
 .drg-back{
   position: absolute;
   z-index: 10;
+}
+
+.back-drag-div{
+  width: 20px;
 }
 
 .drg-task{
@@ -87,4 +185,16 @@ h1{
 
 .react-draggable{
   width: fit-content;
+}
+
+.task button{
+  background-color: rgb(241, 241, 241);
+  width: 150px;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+  font-family: 'Google Sans Code', monospace;
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
 }

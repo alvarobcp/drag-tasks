@@ -18,13 +18,13 @@ function Back() {
 
    return(
    <>
-        <strong><div className="drag-div">/ / / /</div></strong>
-        <ResizableBox className="resizable-box" width={200} height={200} minConstraints={[100, 100]}>
+        <strong><div className="drag-div back-drag-div"></div></strong>
+        <ResizableBox className="resizable-box tback" width={200} height={200} minConstraints={[100, 100]}>
            <form>
                 <textarea
                     onChange={handleChange}
                     type="text"
-                    placeholder="Title..."
+                    placeholder="Add a new title"
                     value={title}
                 />
             </form>     
