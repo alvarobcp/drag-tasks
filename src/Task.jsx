@@ -6,6 +6,7 @@ function Task({deleteTask, type}) {
     const[task, SetTask] = useState("");
     const[dateTask, SetDateTask] = useState("");
     const[locationTask, SetLocationTask] = useState("");
+    const[isMouseIn, SetIsMouseIn] = useState(false);
 
     function handleChange(event){
         SetTask(event.target.value);
@@ -26,6 +27,13 @@ function Task({deleteTask, type}) {
         event.preventDefault();
     }
 
+    function handleMouseEnter(){
+        SetIsMouseIn(true)
+    }
+
+    function handleMouseLeave(){
+        SetIsMouseIn(false)
+    }
 
     switch (type) {
         case 'title':
@@ -51,7 +59,7 @@ function Task({deleteTask, type}) {
                     value={task}
                 />
                 </form>
-                <button onClick={deleteTask}>Completed</button>
+                <button onMouseEnter={() => handleMouseEnter()} onMouseLeave={() => handleMouseLeave()} onClick={deleteTask}><img src={ !isMouseIn ? "https://img.icons8.com/badges/48/unchecked-checkbox.png" : "https://img.icons8.com/badges/48/checked-checkbox.png"} alt="checkbox"/>Completed</button>
             </div>)
         case 'date':
             return(<div className="task tdate">
@@ -71,7 +79,7 @@ function Task({deleteTask, type}) {
                     value={task}
                 />
                 </form>
-                <button onClick={deleteTask}>Completed</button>
+                <button onMouseEnter={() => handleMouseEnter()} onMouseLeave={() => handleMouseLeave()} onClick={deleteTask}><img src={ !isMouseIn ? "https://img.icons8.com/badges/48/unchecked-checkbox.png" : "https://img.icons8.com/badges/48/checked-checkbox.png"} alt="checkbox"/>Completed</button>
             </div>)
         case 'event':
             return(<div className="task tevent">
@@ -97,7 +105,7 @@ function Task({deleteTask, type}) {
                     value={locationTask}
                 />
                 </form>
-                <button onClick={deleteTask}>Completed</button>
+                <button onMouseEnter={() => handleMouseEnter()} onMouseLeave={() => handleMouseLeave()} onClick={deleteTask}><img src={ !isMouseIn ? "https://img.icons8.com/badges/48/unchecked-checkbox.png" : "https://img.icons8.com/badges/48/checked-checkbox.png"} alt="checkbox"/>Completed</button>
             </div>)
     
         default:

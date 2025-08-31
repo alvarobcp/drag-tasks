@@ -16,6 +16,7 @@ function App() {
   const[backs, setBacks] = useState([]);
   const[emojis, setEmojis] = useState([]);
   const[clickType, setClickType] = useState(''); //para saber que es si un back o una task
+  const[typeTitle, setTypeTitle] = useState('My task board') //para controlar encima de que está el ratón
   
 
   const handleClick = (event) => {
@@ -66,17 +67,25 @@ function App() {
     setCanAdd(true);
   }
 
-  
+  function handleMouseEnter(type){
+    setTypeTitle(type);
+  }
+
+  function handleMouseLeave(){
+    setTypeTitle('My task board');
+  }
+
+  //[]Hacer un componente para los botones
   return (
     <>
-      <div className='background-div'><h1>My task board</h1></div>
+      <div className={!canAdd ? 'background-div normal-cursor' : 'background-div add-cursor'}><h1>{!canAdd ? typeTitle : 'Click on the screen to add'}</h1></div>
       <div className='buttons-div'>
-        <button onClick={() => handleAddClick('task')}>{!canAdd ? 'New Task' : 'Select the location and click!'}</button>
-        <button onClick={() => handleAddClick('date')}>{!canAdd ? 'New Date' : 'Select the location and click!'}</button>
-        <button onClick={() => handleAddClick('event')}>{!canAdd ? 'New Event' : 'Select the location and click!'}</button>
-        <button onClick={() => handleAddClick('title')}>{!canAdd ? 'New Title' : 'Select the location and click!'}</button>
-        <button onClick={() => handleBackClick()}>{!canAdd ? 'New Back' : 'Select the location and click!'}</button>
-        <button onClick={() => handleEmojiClick()}>{!canAdd ? 'New Emoji' : 'Select the location and click!'}</button>
+        <button onMouseEnter={() => handleMouseEnter('Add a task')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleAddClick('task')}><img src="https://img.icons8.com/badges/48/note.png" alt="note icon"/></button>
+        <button onMouseEnter={() => handleMouseEnter('Add a date')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleAddClick('date')}><img src="https://img.icons8.com/badges/48/planner.png" alt="planner icon"/></button>
+        <button onMouseEnter={() => handleMouseEnter('Add an event')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleAddClick('event')}><img src="https://img.icons8.com/badges/48/concert-day.png" alt="planner date icon"/></button>
+        <button onMouseEnter={() => handleMouseEnter('Add a folder')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleBackClick()}><img src="https://img.icons8.com/badges/48/folder-invoices.png" alt="folder icon"/></button>
+        <button onMouseEnter={() => handleMouseEnter('Add a random emoji')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleEmojiClick()}><img src="https://img.icons8.com/badges/48/wink.png" alt="emoji icon"/></button>
+        <button onMouseEnter={() => handleMouseEnter('Add a title')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleAddClick('title')}><img src="https://img.icons8.com/badges/48/a.png" alt="title icon"/></button>
       </div>
       <div id='main-container' className='app-div' onClick={handleClick}>
         {tasks.map(task => (
