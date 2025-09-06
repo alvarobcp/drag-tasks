@@ -72,7 +72,7 @@ function App() {
   }
 
   function handleMouseLeave(){
-    setTypeTitle('My task board');
+    setTypeTitle('My whiteboard');
   }
 
   //[]Hacer un componente para los botones
@@ -84,7 +84,7 @@ function App() {
         <button onMouseEnter={() => handleMouseEnter('Add a date')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleAddClick('date')}><img src="https://img.icons8.com/badges/48/planner.png" alt="planner icon"/></button>
         <button onMouseEnter={() => handleMouseEnter('Add an event')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleAddClick('event')}><img src="https://img.icons8.com/badges/48/concert-day.png" alt="planner date icon"/></button>
         <button onMouseEnter={() => handleMouseEnter('Add a folder')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleBackClick()}><img src="https://img.icons8.com/badges/48/folder-invoices.png" alt="folder icon"/></button>
-        <button onMouseEnter={() => handleMouseEnter('Add a random emoji')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleEmojiClick()}><img src="https://img.icons8.com/badges/48/wink.png" alt="emoji icon"/></button>
+        <button onMouseEnter={() => handleMouseEnter('Add an emoji')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleEmojiClick()}><img src="https://img.icons8.com/badges/48/wink.png" alt="emoji icon"/></button>
         <button onMouseEnter={() => handleMouseEnter('Add a title')} onMouseLeave={() => handleMouseLeave()} onClick={() => handleAddClick('title')}><img src="https://img.icons8.com/badges/48/a.png" alt="title icon"/></button>
       </div>
       <div id='main-container' className='app-div' onClick={handleClick}>

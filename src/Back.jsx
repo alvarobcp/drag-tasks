@@ -19,7 +19,7 @@ function Back() {
    return(
    <>
         <strong><div className="drag-div back-drag-div"></div></strong>
-        <ResizableBox className="resizable-box tback" width={200} height={200} minConstraints={[100, 100]}>
+        <ResizableBox className="resizable-box tback" width={400} height={400} minConstraints={[100, 100]}>
            <form>
                 <textarea
                     onChange={handleChange}
